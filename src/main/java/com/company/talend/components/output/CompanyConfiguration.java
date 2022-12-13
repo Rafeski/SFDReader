@@ -14,7 +14,7 @@ import org.talend.sdk.component.api.meta.Documentation;
     @GridLayout.Row({ "dataset" })
 })
 @Documentation("TODO fill the documentation for this configuration")
-public class CompanyOutputOutputConfiguration implements Serializable {
+public class CompanyConfiguration implements Serializable {
     @Option
     @Documentation("TODO fill the documentation for this parameter")
     private CustomDataset dataset;
@@ -23,7 +23,7 @@ public class CompanyOutputOutputConfiguration implements Serializable {
         return dataset;
     }
 
-    public CompanyOutputOutputConfiguration setDataset(CustomDataset dataset) {
+    public CompanyConfiguration setDataset(CustomDataset dataset) {
         this.dataset = dataset;
         return this;
     }

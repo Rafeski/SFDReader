@@ -1,6 +1,9 @@
 package com.company.talend.components.input;
 
 import org.openscience.cdk.Atom;
+import org.openscience.cdk.exception.*;
+import org.openscience.cdk.silent.*;
+import org.openscience.cdk.smiles.*;
 import org.talend.sdk.component.api.component.Icon;
 import org.talend.sdk.component.api.component.Version;
 import org.talend.sdk.component.api.configuration.Option;
@@ -23,6 +26,7 @@ import org.openscience.cdk.tools.manipulator.MolecularFormulaManipulator;
 import org.talend.sdk.component.api.service.record.RecordBuilderFactory;
 
 import java.io.*;
+import java.util.*;
 
 @Version
 @Icon(value = Icon.IconType.CUSTOM, custom = "molecule_32x32")
@@ -33,6 +37,7 @@ public class SDFReaderInput implements Serializable {
     private final RecordBuilderFactory recordBuilderFactory;
     private transient IteratingSDFReader mdliter;
     private transient FileReader sdFile;
+
 
     public SDFReaderInput(@Option("configuration") final SDFReaderInputDataset configuration,
                           final RecordBuilderFactory recordBuilderFactory) {
@@ -57,9 +62,8 @@ public class SDFReaderInput implements Serializable {
     }
 
     @Producer
-    public Record next() {
+    public Record next() throws CDKException {
         // provide a record every time it is called. Returns null if there is no more data
-
         if (mdliter == null) {
             mdliter = new IteratingSDFReader(sdFile, DefaultChemObjectBuilder.getInstance());
         }
@@ -72,22 +76,28 @@ public class SDFReaderInput implements Serializable {
         // there is a molecule
         IAtomContainer mol = mdliter.next();
         IMolecularFormula mf = MolecularFormulaManipulator.getMolecularFormula(mol);
-//        System.out.println(MolecularFormulaManipulator.getString(mf));
-//        int numHeavies = 0;
-//        for (IAtom atom : mol.atoms()) {
-//            if (atom.getAtomicNumber() > 1) {
-//                numHeavies++;
+        System.out.println(MolecularFormulaManipulator.getString(mf));
+        int numHeavies = 0;
+        for (IAtom atom : mol.atoms()) {
+            if (atom.getAtomicNumber() > 1) {
+
+            }
+                numHeavies++;
 //            }
 //        }
 //        return recordBuilderFactory.newRecordBuilder().withInt("count", numHeavies).build();
 
-        System.out.println("Building Record");
+//        System.out.println("TotalMass:" + totMass.toString());
+        SmilesGenerator smiles = new SmilesGenerator(SmiFlavor.Absolute);
+
         return recordBuilderFactory.newRecordBuilder()
                 .withInt("SingleElectronCount", mol.getSingleElectronCount())
                 .withString("Title", mol.getTitle())
                 .withString("MolecularFormula", MolecularFormulaManipulator.getString(mf))
                 .withInt("AtomCount", mol.getAtomCount())
                 .withInt("BondCount", mol.getBondCount())
+                .withString("SMILES", smiles.create(mol))
+                .withString("atoms",mol.atoms().toString())
                 .build();
 
     }

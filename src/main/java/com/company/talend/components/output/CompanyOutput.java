@@ -1,8 +1,6 @@
 package com.company.talend.components.output;
 
 
-
-
 import static org.talend.sdk.component.api.component.Icon.IconType.CUSTOM;
 
 import java.io.Serializable;
@@ -24,19 +22,16 @@ import org.talend.sdk.component.api.record.Record;
 import com.company.talend.components.service.CompanyComponentService;
 
 
-
-
-
 @Version(1) // default version is 1, if some configuration changes happen between 2 versions you can add a migrationHandler
 @Icon(value = CUSTOM, custom = "CompanyOutput") // icon is located at src/main/resources/icons/CompanyOutput.svg
 @Processor(name = "CompanyOutput")
 @Documentation("TODO fill the documentation for this processor")
-public class CompanyOutputOutput implements Serializable {
-    private final CompanyOutputOutputConfiguration configuration;
+public class CompanyOutput implements Serializable {
+    private final CompanyConfiguration configuration;
     private final CompanyComponentService service;
 
-    public CompanyOutputOutput(@Option("configuration") final CompanyOutputOutputConfiguration configuration,
-                          final CompanyComponentService service) {
+    public CompanyOutput(@Option("configuration") final CompanyConfiguration configuration,
+                         final CompanyComponentService service) {
         this.configuration = configuration;
         this.service = service;
     }
