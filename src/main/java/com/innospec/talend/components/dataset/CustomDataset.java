@@ -1,8 +1,8 @@
-package com.company.talend.components.dataset;
+package com.innospec.talend.components.dataset;
 
 import java.io.Serializable;
 
-import com.company.talend.components.datastore.CustomDatastore;
+import com.innospec.talend.components.datastore.CustomDatastore;
 
 import org.talend.sdk.component.api.configuration.Option;
 import org.talend.sdk.component.api.configuration.type.DataSet;

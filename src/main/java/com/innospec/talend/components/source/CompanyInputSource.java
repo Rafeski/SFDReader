@@ -1,4 +1,4 @@
-package com.company.talend.components.source;
+package com.innospec.talend.components.source;
 
 import java.io.Serializable;
 
@@ -12,7 +12,7 @@ import org.talend.sdk.component.api.record.Record;
 import org.talend.sdk.component.api.service.record.RecordBuilderFactory;
 
 
-import com.company.talend.components.service.CompanyComponentService;
+import com.innospec.talend.components.service.CompanyComponentService;
 
 @Documentation("TODO fill the documentation for this source")
 public class CompanyInputSource implements Serializable {

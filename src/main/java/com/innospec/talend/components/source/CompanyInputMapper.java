@@ -1,4 +1,4 @@
-package com.company.talend.components.source;
+package com.innospec.talend.components.source;
 
 import static java.util.Collections.singletonList;
 import static org.talend.sdk.component.api.component.Icon.IconType.CUSTOM;
@@ -17,7 +17,7 @@ import org.talend.sdk.component.api.input.Split;
 import org.talend.sdk.component.api.meta.Documentation;
 import org.talend.sdk.component.api.service.record.RecordBuilderFactory;
 
-import com.company.talend.components.service.CompanyComponentService;
+import com.innospec.talend.components.service.CompanyComponentService;
 
 //
 // this class role is to enable the work to be distributed in environments supporting it.

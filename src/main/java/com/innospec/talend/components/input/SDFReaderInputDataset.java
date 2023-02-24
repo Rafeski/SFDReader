@@ -1,4 +1,4 @@
-package com.company.talend.components.input;
+package com.innospec.talend.components.input;
 
 import org.talend.sdk.component.api.configuration.Option;
 import org.talend.sdk.component.api.configuration.type.DataSet;

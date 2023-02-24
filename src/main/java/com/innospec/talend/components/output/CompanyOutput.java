@@ -1,4 +1,4 @@
-package com.company.talend.components.output;
+package com.innospec.talend.components.output;
 
 
 import static org.talend.sdk.component.api.component.Icon.IconType.CUSTOM;
@@ -19,7 +19,7 @@ import org.talend.sdk.component.api.processor.Input;
 import org.talend.sdk.component.api.processor.Processor;
 import org.talend.sdk.component.api.record.Record;
 
-import com.company.talend.components.service.CompanyComponentService;
+import com.innospec.talend.components.service.CompanyComponentService;
 
 
 @Version(1) // default version is 1, if some configuration changes happen between 2 versions you can add a migrationHandler

@@ -1,4 +1,4 @@
-package com.company.talend.components.service;
+package com.innospec.talend.components.service;
 
 import org.talend.sdk.component.api.service.Service;
 

@@ -1,10 +1,8 @@
-package com.company.talend.components.input;
+package com.innospec.talend.components.input;
 
-import org.openscience.cdk.Atom;
 import org.openscience.cdk.exception.*;
 import org.openscience.cdk.io.*;
 import org.openscience.cdk.io.listener.*;
-import org.openscience.cdk.silent.*;
 import org.openscience.cdk.smiles.*;
 import org.talend.sdk.component.api.component.Icon;
 import org.talend.sdk.component.api.component.Version;
@@ -20,7 +18,6 @@ import java.io.IOException;
 import java.io.Serializable;
 
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IMolecularFormula;
 import org.openscience.cdk.io.iterator.IteratingSDFReader;

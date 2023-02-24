@@ -1,8 +1,8 @@
-package com.company.talend.components.source;
+package com.innospec.talend.components.source;
 
 import java.io.Serializable;
 
-import com.company.talend.components.dataset.CustomDataset;
+import com.innospec.talend.components.dataset.CustomDataset;
 
 import org.talend.sdk.component.api.configuration.Option;
 import org.talend.sdk.component.api.configuration.ui.layout.GridLayout;
